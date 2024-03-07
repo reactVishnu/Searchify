@@ -1,7 +1,7 @@
 import sys
-from web_search import search
+from Web.web_search import search
 import argparse
-
+from install import main
 
 def main():
     parser = argparse.ArgumentParser(description="Search the web from the command line")

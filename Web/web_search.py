@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 
+
 def paginate_snippet(snippet):
     """Paginate the snippet into lines with a width of 80 characters."""
     snippet_lines = textwrap.wrap(snippet, width=80)
@@ -15,17 +16,16 @@ def paginate_snippet(snippet):
 def search(
     query, result_number, include_link, include_title, copy_link, all_results=False
 ):
-    load_dotenv(Path.home()/'.env')
+    load_dotenv(Path.home() / ".env")
     api_key = os.getenv("API_KEY")
     search_engine_id = os.getenv("SEARCH_ENGINE_ID")
-    print(f'API_KEY: {api_key} and search_engine_id: {search_engine_id}')
     url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={search_engine_id}&q={query}"
 
     try:
         print("Searching across web.....\n")
         response = requests.get(url)
         data = response.json()
-        
+
         if "items" in data:
 
             results = data["items"]
@@ -40,15 +40,15 @@ def search(
                     print(f"Result {i+1}:\n")
                     print(f"Link: {link}\n")
                     print(f"Title: {title}\n")
-                    print(f"Snippet: ", end='')
+                    print(f"Snippet: ", end="")
                     snippet_lines = paginate_snippet(snippet)
                     for line in snippet_lines:
                         print(line)
                     print()
-                    print("**"*5)
+                    print("**" * 5)
                     print()
             elif 0 < result_number <= len(results):
-                
+
                 result = results[result_number - 1]
                 snippet = result["snippet"]
                 link = result["link"]
