@@ -1,5 +1,4 @@
 from setuptools import find_packages, setup
-import os
 
 version: str = "1.0.0"
 description: str = "CLI tool for getting the web result from commandline"
