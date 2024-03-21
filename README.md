@@ -19,10 +19,23 @@ Get Web Result, AI Generated Answer through your terminal 😎
     - Helps in reducing distraction as no need to open Google or other Browser for your basic level queries.
 - More focused coding envirnoment.
 - Control the AI-Generated answer's sampling parameter(topk or top_p, temperaturre) and output token.
--
+
 
 ## :lock: Requirements
 - Python 3.XX and Pip 3.XX
 - Works on Windows, Linux and Mac.
 
 ## :package: Installation
+This tool is platform independent, hence it could be installed at any OS that is capable of running Python 3 programs or application.
+- ### Recommended
+    ```
+    pip install searchify-cli
+    ```
+    You might need to restart your system after installation especially in case of cloud system.
+    
+    Visit for more [searchify-cli](https://pypi.org/project/searchify-cli/) pypi page for more information.
+
+This is the one way of installation, other way to install is by manually clonning this repo and register this as a command.
+
+- ### Manual installation
+    1. <b>Clone</b> this repository.
