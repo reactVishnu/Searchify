@@ -37,5 +37,99 @@ This tool is platform independent, hence it could be installed at any OS that is
 
 This is the one way of installation, other way to install is by manually clonning this repo and register this as a command.
 
-- ### Manual installation
-    1. <b>Clone</b> this repository.
+- ### Manual Installation
+    <b> For Linux or Mac </b>
+    
+    1. Clone this repository.
+    ```
+    git clone -b manual-installation https://github.com/reactVishnu/Searchify.git
+    ```
+    2. Install the requirements.
+    ```
+    pip install -r requirements.txt
+    ```
+    3. Register it as a command.
+
+        If you want to make an alias permanent, you can add it to your shell's configuration file.
+        For example:
+        - For <b>Bash</b>, you can add aliases to ~/.bashrc or ~/.bash_aliases.
+        - For <b>Zsh</b>, you can add aliases to ~/.zshrc.
+        - For <b>Fish</b>, you can add aliases to ~/.config/fish/config.fish
+    ```
+    alias search='python3 /home/ec2-user/Searchify/Web/main.py'
+    alias search-config='python3 /home/ec2-user/Searchify/install.py'
+    alias ai-search='python3 /home/ec2-user/Searchify/AI_Search/ai_search.py'
+    ```
+    For unalias purposes
+    ```
+    unalias search
+    ```
+
+    <b> For Windows </b>
+    1. Clone this repository.
+    ```
+    git clone -b manual-installation https://github.com/reactVishnu/Searchify.git
+    ```
+    2. Go to the downloaded folder and Install the requirements.
+    ```
+    pip install -r requirements.txt
+    ```
+    3. Register it as a command using doskey.
+    Mostly doskey is preinstalled in Windows CMD or Powershell.
+    ```
+    doskey search = python C:\Users\path\Searchify\Web\main.py
+    doskey search-config = python C:\Users\path\Searchify\install.py
+    doskey ai-search = python C:\Users\path\Searchify\AI_Search\ai_search.py
+    ```
+    Unregister it  as a command.
+    ```
+    doskey /D search
+    ```
+
+## 🚀 Usage 
+- ### Web Search through terminal
+    All web search can be done through "search" command.
+
+    - <b>`search`</b>: Syntax for most basic search.
+
+        ```
+        search "your_query"
+        ```
+        This one will show the top result(number 1) snippet.
+    - <b>`-h`</b>: Show's help for search.
+        ```
+        search -h
+        ```
+    - <b>`--all`</b>: Display the top 10 result.
+        ```
+        search "your query" --all
+        ```
+    - <b>`--no`</b> : Select the specific result.
+        ```
+        search "your_query" --no=4
+        ```
+    - <b>`--link`</b>: Show's the link and snippet.
+        ```
+        search "your_query" --link
+        ```
+    - <b>`--title`</b>: Show's the title and snippet.
+        ```
+        search "your_query" --title
+        ```
+    - <b>`--copy` </b>: Copy the link to the clipboard.
+        ```
+        search "your_query" --no=3 --link --copy
+        ```
+        It will copy the 3rd results link.
+
+    <b>Overall Usage for `search`:</b>
+
+    ```
+    usage: main.py [-h] [--no NO] [--link] [--title] [--copy]
+               [--all]
+               query
+
+    Search the web from the command line
+    ```
+- ### AI-Search through terminal
+    Get the answers of your query through Google Gemini AI.
