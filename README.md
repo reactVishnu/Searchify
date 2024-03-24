@@ -90,14 +90,46 @@ This is the one way of installation, other way to install is by manually clonnin
 - ### Web Search through terminal
     All web search can be done through "search" command.
 
-    - <b>search</b>: Syntax for most basic search.
+    - <b>`search`</b>: Syntax for most basic search.
 
         ```
         search "your_query"
         ```
         This one will show the top result(number 1) snippet.
-    - <b>--all</b>: Show's the top 10 result.
+    - <b>`-h`</b>: Show's help for search.
+        ```
+        search -h
+        ```
+    - <b>`--all`</b>: Display the top 10 result.
         ```
         search "your query" --all
         ```
-    - <b></b>:
+    - <b>`--no`</b> : Select the specific result.
+        ```
+        search "your_query" --no=4
+        ```
+    - <b>`--link`</b>: Show's the link and snippet.
+        ```
+        search "your_query" --link
+        ```
+    - <b>`--title`</b>: Show's the title and snippet.
+        ```
+        search "your_query" --title
+        ```
+    - <b>`--copy` </b>: Copy the link to the clipboard.
+        ```
+        search "your_query" --no=3 --link --copy
+        ```
+        It will copy the 3rd results link.
+
+    <b>Overall Usage for `search`:</b>
+
+    ```
+    usage: main.py [-h] [--no NO] [--link] [--title] [--copy]
+               [--all]
+               query
+
+    Search the web from the command line
+    ```
+- ### AI-Search through terminal
+    Get the answers of your query through Google Gemini AI.
