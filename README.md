@@ -18,7 +18,7 @@ Get Web Result, AI Generated Answer through your terminal 😎
 - Good for the basic and medium level questions.
     - Helps in reducing distraction as no need to open Google or other Browser for your basic level queries.
 - More focused coding envirnoment.
-- Control the AI-Generated answer's sampling parameter(topk or top_p, temperaturre) and output token.
+- Control the AI-Generated answer's sampling parameter(topk or top_p, temperature) and output token.
 
 
 ## :lock: Requirements
@@ -37,5 +37,51 @@ This tool is platform independent, hence it could be installed at any OS that is
 
 This is the one way of installation, other way to install is by manually clonning this repo and register this as a command.
 
-- ### Manual installation
-    1. <b>Clone</b> this repository.
+- ### Manual Installation
+    <b> For Linux or Mac </b>
+    
+    1. Clone this repository.
+    ```
+    git clone -b manual-installation https://github.com/reactVishnu/Searchify.git
+    ```
+    2. Install the requirements.
+    ```
+    pip install -r requirements.txt
+    ```
+    3. Register it as a command.
+
+        If you want to make an alias permanent, you can add it to your shell's configuration file.
+        For example:
+        - For <b>Bash</b>, you can add aliases to ~/.bashrc or ~/.bash_aliases.
+        - For <b>Zsh</b>, you can add aliases to ~/.zshrc.
+        - For <b>Fish</b>, you can add aliases to ~/.config/fish/config.fish
+    ```
+    alias search='python3 /home/ec2-user/Searchify/Web/main.py'
+    alias search-config='python3 /home/ec2-user/Searchify/install.py'
+    alias ai-search='python3 /home/ec2-user/Searchify/AI_Search/ai_search.py'
+    ```
+    For unalias purposes
+    ```
+    unalias search
+    ```
+
+    <b> For Windows </b>
+    1. Clone this repository.
+    ```
+    git clone -b manual-installation https://github.com/reactVishnu/Searchify.git
+    ```
+    2. Go to the downloaded folder and Install the requirements.
+    ```
+    pip install -r requirements.txt
+    ```
+    3. Register it as a command using doskey.
+    Mostly doskey is preinstalled in Windows CMD or Powershell.
+    ```
+    doskey search = python C:\Users\path\Searchify\Web\main.py
+    doskey search-config = python C:\Users\path\Searchify\install.py
+    doskey ai-search = python C:\Users\path\Searchify\AI_Search\ai_search.py
+    ```
+    Unregister it  as a command.
+    ```
+    doskey /D search
+    ```
