@@ -85,3 +85,19 @@ This is the one way of installation, other way to install is by manually clonnin
     ```
     doskey /D search
     ```
+
+## 🚀 Usage 
+- ### Web Search through terminal
+    All web search can be done through "search" command.
+
+    - <b>search</b>: Syntax for most basic search.
+
+        ```
+        search "your_query"
+        ```
+        This one will show the top result(number 1) snippet.
+    - <b>--all</b>: Show's the top 10 result.
+        ```
+        search "your query" --all
+        ```
+    - <b></b>:
