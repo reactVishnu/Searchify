@@ -18,7 +18,7 @@ Get Web Result, AI Generated Answer through your terminal 😎
 - Good for the basic and medium level questions.
     - Helps in reducing distraction as no need to open Google or other Browser for your basic level queries.
 - More focused coding envirnoment.
-- Control the AI-Generated answer's sampling parameter(topk or top_p, temperaturre) and output token.
+- Control the AI-Generated answer's sampling parameter(topk or top_p, temperature) and output token.
 
 
 ## :lock: Requirements
@@ -131,5 +131,39 @@ This is the one way of installation, other way to install is by manually clonnin
 
     Search the web from the command line
     ```
-- ### AI-Search through terminal
-    Get the answers of your query through Google Gemini AI.
+- ### 🤖AI-Search through terminal
+    Get the answers of your query through Google Generative AI Palm.
+    - <b>`ai-search`</b>: Syntax for most basic ai search.
+
+        ```
+        ai-search "your_query"
+        ```
+
+    - <b>`--temp`</b>: Controls the randomness of the output. Must be positive. Typical values are in between [0,1]
+    
+        Higher values produce a more random and varied response. A temperature of zero will be deterministic.
+        ```
+        ai-search "your_query" --temp=0.3
+        ```
+
+    - <b>`--max_output_tokens`</b>: The maximum number of output token [Default : 250]
+        
+        ```
+        ai-search "your_query" --max_output_tokens=800
+        ```
+
+    - <b>`--top_p`</b>: top_p configures the nucleus sampling. It sets the maximum cumulative probability of tokens to sample from.
+
+        For example, if the sorted probabilities are [0.5, 0.2, 0.1, 0.1, 0.05, 0.05] a top_p of 0.8 will sample as [0.625, 0.25, 0.125, 0, 0, 0].
+        ```
+        ai-search "your_query"  --top_p=0.1
+         ```
+
+    - <b>`--top_k`</b>: top_k sets the maximum number of tokens to sample from on each step.
+        ```
+        ai-search "your_query" -- top_k=0.2
+        ```
+    - <b>`--page`</b>: Paginate the output. [Default: False]
+        ```
+        ai-search "your_query" --page
+        ```
